@@ -21,3 +21,12 @@ class Polynomial:
         terms += [f"{''if c==1 else c}x^{d}" for d, c in enumerate(coefs[2:], start=2) if c]
 
         return " + ".join(reversed(terms)) or "0"
+
+    def __repr__(self):
+
+        return self.__class__.__name__ + "(" + repr(self.coefficients) + ")"
+
+    def __eq__(self, other):
+
+        return self.coefficients == other.coefficients
+    
